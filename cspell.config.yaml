@@ -168,6 +168,9 @@ words:
   - endpoints
   - webhook
   - webhooks
+  - sideload
+  - sideloaded
+  - sideloading
   - ITSM
   - CMDB
   - cloudapp
@@ -271,6 +274,8 @@ words:
   - Mixtral
   - Qwen
   - Moonshot
+  - moonshotai
+  - Kimi
   - DeepSeek
   - deepseek
   - onboarder
