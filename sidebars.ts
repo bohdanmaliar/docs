@@ -22,6 +22,7 @@ const sidebars: SidebarsConfig = {
         'user-guide/getting-started/enterprise-features',
         'user-guide/getting-started/meet-faq-assistant',
         'user-guide/getting-started/help-center',
+        'user-guide/getting-started/release-notes',
         'user-guide/getting-started/glossary',
       ],
     },
@@ -69,6 +70,7 @@ const sidebars: SidebarsConfig = {
                 'user-guide/assistants/share-assistant-chat-with-other-users',
                 'user-guide/assistants/export-assistant-chat-messages-to-word-and-pdf-formats',
                 'user-guide/assistants/html-preview',
+                'user-guide/assistants/copy-table',
                 'user-guide/assistants/chat-input-settings',
               ],
             },
@@ -185,6 +187,7 @@ const sidebars: SidebarsConfig = {
                 'user-guide/tools_integrations/tools/xray',
                 'user-guide/tools_integrations/tools/plugin',
                 'user-guide/tools_integrations/tools/filesystem',
+                'user-guide/tools_integrations/tools/ms-teams-bot',
                 {
                   type: 'category',
                   label: 'Git',
@@ -299,6 +302,7 @@ const sidebars: SidebarsConfig = {
             'user-guide/codemie-cli/skills-integration',
             'user-guide/codemie-cli/codemie-claude-skills',
             'user-guide/codemie-cli/sdk-cli-reference',
+            'user-guide/codemie-cli/claude-desktop',
           ],
         },
         {
@@ -788,6 +792,7 @@ const sidebars: SidebarsConfig = {
                 'admin/configuration/codemie/datasources-configuration',
                 'admin/configuration/codemie/customer-feature-configuration',
                 'admin/configuration/codemie/code-executor-configuration',
+                'admin/configuration/codemie/scaling-configuration',
                 {
                   type: 'category',
                   label: 'AI Models Integration',
@@ -895,7 +900,10 @@ const sidebars: SidebarsConfig = {
                 id: 'admin/configuration/observability/observability-overview',
               },
               collapsed: true,
-              items: ['admin/configuration/observability/logs-retention'],
+              items: [
+                'admin/configuration/observability/logs-retention',
+                'admin/configuration/observability/metrics-index-rotation',
+              ],
             },
           ],
         },
@@ -931,33 +939,83 @@ const sidebars: SidebarsConfig = {
           },
           collapsed: true,
           items: [
-            'admin/update/release-notes',
-            'admin/update/codemie/update-version',
             {
               type: 'category',
-              label: 'Keycloak',
+              label: 'Release Notes',
+              link: {
+                type: 'doc',
+                id: 'admin/update/release-notes/release-notes',
+              },
+              collapsed: true,
+              items: [],
+            },
+            {
+              type: 'category',
+              label: 'CodeMie Platform',
+              link: {
+                type: 'doc',
+                id: 'admin/update/codemie-platform/codemie-platform',
+              },
+              collapsed: true,
+              items: [
+                'admin/update/codemie-platform/update-core-components',
+                'admin/update/codemie-platform/update-image-pull-secret',
+              ],
+            },
+            {
+              type: 'category',
+              label: '3rd-Party Components',
+              link: {
+                type: 'doc',
+                id: 'admin/update/3rd-party-components/3rd-party-components',
+              },
               collapsed: true,
               items: [
                 {
                   type: 'category',
-                  label: 'Keycloak Upgrade',
+                  label: 'Keycloak',
                   link: {
                     type: 'doc',
-                    id: 'admin/update/keycloak/keycloak-upgrade/keycloak-upgrade',
+                    id: 'admin/update/3rd-party-components/keycloak/keycloak',
                   },
                   collapsed: true,
-                  items: ['admin/update/keycloak/keycloak-upgrade/keycloak-24-to-26'],
+                  items: [
+                    {
+                      type: 'category',
+                      label: 'Keycloak Upgrade',
+                      link: {
+                        type: 'doc',
+                        id: 'admin/update/3rd-party-components/keycloak/keycloak-upgrade/keycloak-upgrade',
+                      },
+                      collapsed: true,
+                      items: [
+                        'admin/update/3rd-party-components/keycloak/keycloak-upgrade/keycloak-24-to-26',
+                      ],
+                    },
+                    'admin/update/3rd-party-components/keycloak/keycloak-operator-upgrade',
+                    'admin/update/3rd-party-components/keycloak/keycloak-database-migration',
+                    'admin/update/3rd-party-components/keycloak/keycloak-theme-setup',
+                  ],
                 },
-                'admin/update/keycloak/keycloak-operator-upgrade',
-                'admin/update/keycloak/keycloak-database-migration',
-                'admin/update/keycloak/keycloak-theme-setup',
+                'admin/update/3rd-party-components/terraform/terraform-upgrade',
+                {
+                  type: 'category',
+                  label: 'Elasticsearch',
+                  link: {
+                    type: 'doc',
+                    id: 'admin/update/3rd-party-components/elasticsearch/elasticsearch',
+                  },
+                  collapsed: true,
+                  items: [
+                    'admin/update/3rd-party-components/elasticsearch/elasticsearch-kibana-upgrade',
+                    'admin/update/3rd-party-components/elasticsearch/metrics-index-rotation',
+                  ],
+                },
+                'admin/update/3rd-party-components/fluent-bit/fluent-bit-upgrade',
+                'admin/update/3rd-party-components/nats/nats-upgrade',
+                'admin/update/3rd-party-components/oauth2-proxy/oauth2-proxy-upgrade',
               ],
             },
-            'admin/update/terraform-upgrade/terraform-upgrade',
-            'admin/update/oauth2-proxy-upgrade',
-            'admin/update/elasticsearch-kibana-upgrade',
-            'admin/update/fluent-bit-upgrade',
-            'admin/update/nats-upgrade',
           ],
         },
         {
